@@ -9,8 +9,6 @@ export class MoyskladController {
 
   @Get('moysklad')
   async getProfits(@Query() stateName: UpdateProfitDto['stateName']) {
-    console.log(stateName);
-
     const profits = await this.moyskladService.getAllProfit(stateName);
 
     return profits;
