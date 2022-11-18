@@ -9,9 +9,9 @@ export class MoyskladService {
     @InjectModel(Profit.name) private profitModel: Model<ProfitDocument>,
   ) {}
 
-  async getAllProfit() {
+  async getAllProfit(stateName) {
     try {
-      const profits = await this.profitModel.find();
+      const profits = await this.profitModel.find(stateName);
 
       return profits;
     } catch (error) {
