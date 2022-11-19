@@ -13,4 +13,11 @@ export class MoyskladController {
 
     return profits;
   }
+
+  @Get('moysklad/statuses')
+  async getStatus() {
+    const profits = await this.moyskladService.getAllStatus();
+
+    return profits;
+  }
 }
